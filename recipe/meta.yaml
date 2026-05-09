@@ -1,4 +1,4 @@
-{% set version = "0.0.4" %}
+{% set version = "0.1.0" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,7 +9,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/fastglm_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/fastglm/fastglm_{{ version }}.tar.gz
-  sha256: bc5d351ecc10769263e593e2b9730d83810fd39c7240d1c0b5427c2c4ec50064
+  sha256: 5bbc879cefeca5b07b31a35140c36c916b0457d46958e656d010eeaad9d8b1b3
 
 build:
   number: 0
@@ -17,7 +17,9 @@ build:
     - lib/R/lib/
     - lib/
   missing_dso_whitelist:
-    - '*/R.dll'           # [win]
+    - '*/R.dll'        # [win]
+    - '*/Rblas.dll'    # [win]
+    - '*/Rlapack.dll'  # [win]
 
 requirements:
   build:
@@ -36,12 +38,16 @@ requirements:
   host:
     - r-base
     - r-bh
+    - r-formula
+    - r-matrix
     - r-rcpp >=0.12.13
     - r-rcppeigen
     - r-bigmemory
   run:
     - r-base
-    - r-bh
+    #- r-bh
+    - r-formula
+    - r-matrix
     - r-rcpp >=0.12.13
     - r-rcppeigen
     - r-bigmemory
@@ -52,7 +58,8 @@ test:
     - "\"%R%\" -e \"library('fastglm')\""  # [win]
 
 about:
-  home: https://CRAN.R-project.org/package=fastglm
+  home: https://jaredhuling.org/fastglm/
+  dev_url: https://github.com/jaredhuling/fastglm
   license: GPL-2.0-or-later
   summary: Fits generalized linear models efficiently using 'RcppEigen'. The iteratively reweighted least squares implementation utilizes the step-halving approach of Marschner (2011) <doi:10.32614/RJ-2011-012> to help safeguard against convergence issues.
   license_family: GPL
