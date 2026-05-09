@@ -7,20 +7,24 @@ Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-fastglm-feeds
 About r-fastglm
 ---------------
 
-Home: https://CRAN.R-project.org/package=fastglm
+Home: https://jaredhuling.org/fastglm/
 
 Package license: GPL-2.0-or-later
 
 Summary: Fits generalized linear models efficiently using 'RcppEigen'. The iteratively reweighted least squares implementation utilizes the step-halving approach of Marschner (2011) <doi:10.32614/RJ-2011-012> to help safeguard against convergence issues.
+
+Development: https://github.com/jaredhuling/fastglm
 
 About r-fastglm
 ---------------
 
-Home: https://CRAN.R-project.org/package=fastglm
+Home: https://jaredhuling.org/fastglm/
 
 Package license: GPL-2.0-or-later
 
 Summary: Fits generalized linear models efficiently using 'RcppEigen'. The iteratively reweighted least squares implementation utilizes the step-halving approach of Marschner (2011) <doi:10.32614/RJ-2011-012> to help safeguard against convergence issues.
+
+Development: https://github.com/jaredhuling/fastglm
 
 Current build status
 ====================
