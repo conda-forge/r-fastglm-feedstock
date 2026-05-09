@@ -17,7 +17,9 @@ build:
     - lib/R/lib/
     - lib/
   missing_dso_whitelist:
-    - '*/R.dll'           # [win]
+    - '*/R.dll'        # [win]
+    - '*/Rblas.dll'    # [win]
+    - '*/Rlapack.dll'  # [win]
 
 requirements:
   build:
@@ -36,12 +38,16 @@ requirements:
   host:
     - r-base
     - r-bh
+    - r-formula
+    - r-matrix
     - r-rcpp >=0.12.13
     - r-rcppeigen
     - r-bigmemory
   run:
     - r-base
-    - r-bh
+    #- r-bh
+    - r-formula
+    - r-matrix
     - r-rcpp >=0.12.13
     - r-rcppeigen
     - r-bigmemory
@@ -52,7 +58,8 @@ test:
     - "\"%R%\" -e \"library('fastglm')\""  # [win]
 
 about:
-  home: https://CRAN.R-project.org/package=fastglm
+  home: https://jaredhuling.org/fastglm/
+  dev_url: https://github.com/jaredhuling/fastglm
   license: GPL-2.0-or-later
   summary: Fits generalized linear models efficiently using 'RcppEigen'. The iteratively reweighted least squares implementation utilizes the step-halving approach of Marschner (2011) <doi:10.32614/RJ-2011-012> to help safeguard against convergence issues.
   license_family: GPL
