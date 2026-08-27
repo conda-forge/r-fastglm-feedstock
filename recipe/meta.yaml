@@ -1,4 +1,4 @@
-{% set version = "0.1.1" %}
+{% set version = "0.1.2" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,7 +9,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/fastglm_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/fastglm/fastglm_{{ version }}.tar.gz
-  sha256: 7254ef420dba7e369677c2fd28d9755eb84b4f0340d0fa635c7f508ebfc9d9f8
+  sha256: 4cb451005c9c2096e29c583861fd3f8302d7d0e92ef2fa5df1e8a92f687c64dd
 
 build:
   number: 0
